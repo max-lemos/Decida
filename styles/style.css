@@ -150,9 +150,10 @@ header {
 }
 
 .logo img {
-    display: block;
-    max-width: 50px;
-    
+    display: flex;
+    max-width: 100%;
+    max-height: 29px;
+    margin-left: -15px;
 }
 
 .hero-grid {
@@ -224,6 +225,8 @@ footer {
     } 
     .logo img {
         max-width: 150px;
+        margin-left: 0;
+        max-height: none;
     }
 
     .hero-grid {
