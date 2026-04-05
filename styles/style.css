@@ -127,7 +127,7 @@ header {
 .header-flex .menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
 }
 
 .menu a {
@@ -151,7 +151,7 @@ header {
 
 .logo img {
     display: block;
-    max-width: 150px;
+    max-width: 100px;
     
 }
 
@@ -219,6 +219,13 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+    .header-flex .menu {
+        gap: 25px;
+    } 
+    .logo img {
+        max-width: 150px;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
