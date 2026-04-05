@@ -1,0 +1,262 @@
+:root {
+    /* Base (light) */
+    --color-bg: #F8FAFC;          /* fundo geral (quase branco) */
+    --color-surface: #FFFFFF;     /* cards/header */
+
+    /* Texto */
+    --color-text: #0F172A;        /* texto principal (não preto puro) */
+    --color-text-muted: #475569;  /* texto secundário */
+
+    /* Marca */
+    --color-primary: #2563EB;     
+    --color-primary-hover: #1D4ED8;
+
+    /* Secundária */
+    --color-secondary: #94A3B8;
+
+    /* Accent */
+    --color-accent: #22C55E;
+    --color-accent-hover: #16A34A;
+
+    /* Bordas */
+    --color-border: #E2E8F0;
+
+    /* Foco (ainda visível, mas menos agressivo) */
+    --color-focus: #2563EB33; /* azul com transparência */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--color-text-muted);
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+
+    background-color: var(--color-primary);
+    color: #ffffff;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.button:focus {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.hero-text, .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+
+    position:sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-flex .menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu a:focus {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.header-flex ul {
+    list-style-type: none;
+}
+
+.logo img {
+    display: block;
+    max-width: 150px;
+    
+}
+
+.hero-grid {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+    text-align: left;
+}
+
+.hero-grid img, .about-flex img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    padding: 20px;
+    gap: 16px;
+
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+}
+
+.card h3 {
+    color: var(--color-text);
+}
+
+.card p {
+    color: var(--color-text-muted);
+}
+
+.about-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        text-align: left;
+    }
+
+    .hero-text {
+        grid-column: 1;
+    }
+    .hero-image {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .hero-action {
+        grid-column: 1;
+        grid-row: 2;
+        align-content: end;
+        margin-top: 8px;
+    }
+    .about-flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-image {
+        min-width: 50%;
+        border-radius: 12px;
+    }
+
+    .about-text {
+        max-width: 500px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .about-image {
+        max-width: 50%;
+    }
+}
